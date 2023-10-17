@@ -92,10 +92,4 @@ export default {
     }
   }
 }
-
-.slide {
-}
-
-.sections {
-}
 </style>
