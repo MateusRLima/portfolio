@@ -18,36 +18,28 @@
     </v-row>
     <h2 class="portfolio-division my-5">Sites</h2>
     <v-row class="mb-10">
-      <v-col cols="4">
-        <v-hover v-slot="{ hover }">
-          <v-card>
-            <v-img height="250" src="../assets/MrFat.png">
-              <div class="icon-space d-flex justify-center align-center">
-                <v-btn depressed target="_blank" href="https://mrfatbarbearia.com.br/" :color="hover ? '#1b1b1b' : 'rgba(255, 255, 255, 0)' " >
-                  <span :class="hover ? 'show-btn' : 'not-show-btn'">
-                    https://mrfatbarbearia.com.br/
-                  </span>
-                </v-btn>
-              </div>
-            </v-img>
-          </v-card>
-        </v-hover>
-      </v-col>
-      <v-col cols="4">
-        <v-hover v-slot="{ hover }">
-          <v-card>
-            <v-img height="250" src="../assets/PTDA.png">
-              <div class="icon-space d-flex justify-center align-center">
-                <v-btn depressed target="_blank" href="https://portrasdoato.web.app/#/" :color="hover ? '#1b1b1b' : 'rgba(255, 255, 255, 0)' " >
-                  <span :class="hover ? 'show-btn' : 'not-show-btn'">
-                    https://portrasdoato.web.app/#/
-                  </span>
-                </v-btn>
-              </div>
-            </v-img>
-          </v-card>
-        </v-hover>
-      </v-col>
+      <v-card width="500" class="mr-5">
+        <v-img height="250" src="../assets/MrFat.png">
+          <div class="icon-space d-flex justify-center align-center">
+            <v-btn depressed target="_blank" href="https://mrfatbarbearia.com.br/" color="#1b1b1b">
+              <span class="show-btn">
+                https://mrfatbarbearia.com.br/
+              </span>
+            </v-btn>
+          </div>
+        </v-img>
+      </v-card>
+      <v-card width="500">
+        <v-img height="250" src="../assets/PTDA.png">
+          <div class="icon-space d-flex justify-center align-center">
+            <v-btn depressed target="_blank" href="https://portrasdoato.web.app/#/" color="#1b1b1b">
+              <span class="show-btn">
+                https://portrasdoato.web.app/#/
+              </span>
+            </v-btn>
+          </div>
+        </v-img>
+      </v-card>
     </v-row>
   </v-container>
 </template>
