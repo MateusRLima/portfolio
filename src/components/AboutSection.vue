@@ -10,12 +10,6 @@
             desenvolvimento mobile e web, utilizando tecnologias como React Native, Vue.js e React.js. 
             Sou apaixonado por aprender e estar sempre atualizado com as tendências e melhores práticas da indústria.
           </p>
-          <p>
-            Estou constantemente buscando desafios que me permitam crescer e me aprimorar profissionalmente. Meu
-            objetivo é contribuir com meu conhecimento e experiência para o sucesso de projetos inovadores, onde possa trabalhar em
-            equipe e colaborar com outros profissionais talentosos. Estou animado para explorar novas oportunidades e
-            enfrentar novos desafios em minha carreira como desenvolvedor.
-          </p>
         </div>
       </v-col>
       <v-col align="left">

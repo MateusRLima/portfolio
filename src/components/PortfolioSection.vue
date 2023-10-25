@@ -4,20 +4,49 @@
     <h2 class="portfolio-division mb-5">Behance</h2>
     <v-row>
       <v-col cols="4">
-
-        <v-card>
-          <img src="../assets/PTDA.png" height="300px"/>
-          <v-card-title primary-title>
-            <div>
-              <h3 class="headline mb-0">Por trás do ato</h3>
-              <div>description</div>
-            </div>
-          </v-card-title>
-          <v-card-actions>
-            <v-btn flat color="primary">text</v-btn>
-            <v-btn flat color="primary">text</v-btn>
-          </v-card-actions>
-        </v-card>
+        <iframe src="https://www.behance.net/embed/project/152047307?ilo0=1" height="250" width="300" allowfullscreen
+          lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+      </v-col>
+      <v-col cols="4">
+        <iframe src="https://www.behance.net/embed/project/117374525?ilo0=1" height="250" width="300" allowfullscreen
+          lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+      </v-col>
+      <v-col cols="4">
+        <iframe src="https://www.behance.net/embed/project/118857649?ilo0=1" height="250" width="300" allowfullscreen
+          lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+      </v-col>
+    </v-row>
+    <h2 class="portfolio-division my-5">Sites</h2>
+    <v-row class="mb-10">
+      <v-col cols="4">
+        <v-hover v-slot="{ hover }">
+          <v-card>
+            <v-img height="250" src="../assets/MrFat.png">
+              <div class="icon-space d-flex justify-center align-center">
+                <v-btn depressed target="_blank" href="https://mrfatbarbearia.com.br/" :color="hover ? '#1b1b1b' : 'rgba(255, 255, 255, 0)' " >
+                  <span :class="hover ? 'show-btn' : 'not-show-btn'">
+                    https://mrfatbarbearia.com.br/
+                  </span>
+                </v-btn>
+              </div>
+            </v-img>
+          </v-card>
+        </v-hover>
+      </v-col>
+      <v-col cols="4">
+        <v-hover v-slot="{ hover }">
+          <v-card>
+            <v-img height="250" src="../assets/PTDA.png">
+              <div class="icon-space d-flex justify-center align-center">
+                <v-btn depressed target="_blank" href="https://portrasdoato.web.app/#/" :color="hover ? '#1b1b1b' : 'rgba(255, 255, 255, 0)' " >
+                  <span :class="hover ? 'show-btn' : 'not-show-btn'">
+                    https://portrasdoato.web.app/#/
+                  </span>
+                </v-btn>
+              </div>
+            </v-img>
+          </v-card>
+        </v-hover>
       </v-col>
     </v-row>
   </v-container>
@@ -25,6 +54,11 @@
 <script>
 export default {
   name: "PortfolioSection",
+  data() {
+    return {
+      transparent: 'rgba(255, 255, 255, 0)',
+    }
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -37,8 +71,21 @@ export default {
   .portfolio-title {
     font-size: 3rem;
   }
+
   .portfolio-division {
     font-size: 2.5rem;
+  }
+
+  .show-btn {
+    color: global.$pink;
+  }
+
+  .not-show-btn {
+    color: rgba(255, 255, 255, 0);
+  }
+
+  .icon-space {
+    height: 100%;
   }
 }
 
