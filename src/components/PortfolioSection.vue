@@ -15,7 +15,7 @@
     </v-row>
     <h2 class="portfolio-division my-5">Sites</h2>
     <v-row class="mb-10">
-      <v-card width="500" class="mr-5 mb-5">
+      <v-card width="500" height="250" class="mr-5 mb-5">
         <v-img height="250" src="../assets/MrFat.png" alt="Site de barbearia chamado MrFat Barbearia">
           <div class="icon-space d-flex justify-center align-center">
             <v-btn depressed target="_blank" href="https://mrfatbarbearia.com.br/" color="#1b1b1b">
@@ -26,7 +26,7 @@
           </div>
         </v-img>
       </v-card>
-      <v-card width="500">
+      <v-card width="500" height="250">
         <v-img height="250" src="../assets/PTDA.png" alt="Site de notícias feito pra TCC chamado Por trás do ato">
           <div class="icon-space d-flex justify-center align-center">
             <v-btn depressed target="_blank" href="https://portrasdoato.web.app/#/" color="#1b1b1b">
@@ -56,13 +56,9 @@ export default {
       if (this.$vuetify.breakpoint.mdAndDown) {
         return '350'
       } else {
-        return '300'
+        return '350'
       }
     },
-  },
-
-  mounted() {
-    console.log(this.$vuetify.breakpoint)
   },
 
   data() {
@@ -88,7 +84,7 @@ export default {
   }
 
   .show-btn {
-    color: global.$pink;
+    color: global.$light;
   }
 
   .not-show-btn {
