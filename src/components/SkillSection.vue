@@ -19,7 +19,7 @@
             <SkillChip chip-name="Angular" icon="mdi-angular" />
             <SkillChip chip-name="ReactJS" icon="mdi-react" />
           </v-row>
-          <h3 class="mb-5 mt-10 skill-categories">Vercionamento</h3>
+          <h3 class="mb-5 mt-10 skill-categories">Versionamento</h3>
           <v-row>
             <SkillChip chip-name="Git" icon="mdi-git" />
             <SkillChip chip-name="Bitbucket" icon="mdi-bitbucket" />
@@ -38,7 +38,6 @@
       <v-col class="pl-0">
         <div>
           <h2 class="skill-division">Soft Skill</h2>
-          <h3 class="mb-5 skill-categories">Front-end</h3>
           <v-row>
             <SkillChip chip-name="Trabalho em equipe" icon="mdi-account-group" />
             <SkillChip chip-name="Gerenciamento de tempo" icon="mdi-account-clock" />

@@ -12,7 +12,7 @@
         </span>
         <div class="mt-10">
           <h2 class="mb-5">Vamos nos falar:</h2>
-          <v-btn :large="isLarge" dark outlined color="secondary"><v-icon :large="isLarge"
+          <v-btn :large="isLarge" href="https://wa.me/5581998120775" dark outlined color="secondary"><v-icon :large="isLarge"
               color="secondary">mdi-whatsapp</v-icon></v-btn>
           <v-btn :large="isLarge" dark outlined color="secondary" class="mx-5"
             href="https://www.linkedin.com/in/mateus-r-de-lima/" target="_blank"><v-icon :large="isLarge"
