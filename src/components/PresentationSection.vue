@@ -11,7 +11,7 @@
           <v-icon x-large>mdi-language-css3</v-icon>
         </span>
         <div class="mt-10">
-          <h2 class="mb-5">Vamos nos falar:</h2>
+          <h2 class="mb-5">Vamos nos conhecer:</h2>
           <v-btn :large="isLarge" target="_blank" href="https://wa.me/5581998120775" dark outlined color="secondary"><v-icon :large="isLarge"
               color="secondary">mdi-whatsapp</v-icon></v-btn>
           <v-btn :large="isLarge" dark outlined color="secondary" class="mx-5"
