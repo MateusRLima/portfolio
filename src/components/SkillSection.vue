@@ -25,7 +25,6 @@
             <SkillChip chip-name="Bitbucket" icon="mdi-bitbucket" />
             <SkillChip chip-name="Github" icon="mdi-github" />
             <SkillChip chip-name="Gitlab" icon="mdi-gitlab" />
-            <SkillChip chip-name="Graphql" icon="mdi-graphql" />
           </v-row>
           <h3 class="mb-5 mt-10 skill-categories">Outros</h3>
           <v-row>
