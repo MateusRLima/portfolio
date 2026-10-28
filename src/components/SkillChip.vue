@@ -1,54 +1,69 @@
-<template lang="">
-  <div>
+<template>
+  <div role="listitem">
     <v-chip
-      class="ma-2"
       color="secondary"
       label
-      outlined
-      text-color="primary"
-      :large="isLarge"
+      :variant="highlight ? 'flat' : 'tonal'"
+      :size="chipSize"
+      :class="['skill-chip', { 'skill-chip--highlight': highlight }]"
     >
-      <v-icon color="secondary" left :large="isLarge">
+      <v-icon start :size="chipSize" aria-hidden="true">
         {{ icon }}
       </v-icon>
       <span class="chip-name">{{ chipName }}</span>
     </v-chip>
   </div>
 </template>
-<script>
 
-export default {
-  name: "SkillChip",
+<script setup>
+import { computed } from 'vue';
+import { useDisplay } from 'vuetify';
 
-  props: {
-    icon: {
-      default: "",
-      type: String,
-    },
-    chipName: {
-      default: "",
-      type: String
-    }
+defineProps({
+  icon: {
+    default: '',
+    type: String,
   },
-
-  computed: {
-    isLarge() {
-      return !this.$vuetify.breakpoint.mdAndDown;
-    }
+  chipName: {
+    default: '',
+    type: String,
   },
-}
+  highlight: {
+    default: false,
+    type: Boolean,
+  },
+});
+
+const { mdAndDown } = useDisplay();
+
+const chipSize = computed(() => {
+  return mdAndDown.value ? 'default' : 'large';
+});
 </script>
-<style lang="scss">
+
+<style lang="scss" scoped>
 @use '../global';
 
+.skill-chip {
+  font-family: global.$primary-font;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.skill-chip--highlight {
+  font-weight: 700;
+}
+
 .chip-name {
-  font-size: large;
-  font-family: global.$primary-font, monospace;
+  font-size: 0.95rem;
 }
 
 @media (min-width: 1280px) {
   .chip-name {
-    font-size: x-large;
+    font-size: 1.05rem;
   }
 }
 </style>

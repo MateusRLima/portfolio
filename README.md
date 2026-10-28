@@ -1,24 +1,33 @@
-# portfolio
+# Portfólio — Mateus Rosa
 
-## Project setup
-```
-yarn install
-```
+Portfólio pessoal desenvolvido com **Vue 3**, **Vuetify 3** e **Vite 5**.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
+## Configuração do projeto
+
+```bash
+npm install
 ```
 
-### Compiles and minifies for production
-```
-yarn build
+### Ambiente de desenvolvimento (Hot-Reload)
+
+```bash
+npm run dev
 ```
 
-### Lints and fixes files
-```
-yarn lint
+### Build para produção
+
+```bash
+npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Pré-visualizar build de produção
+
+```bash
+npm run preview
+```
+
+### Lint e formatação de código
+
+```bash
+npm run lint
+```

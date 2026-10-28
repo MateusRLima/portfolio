@@ -1,6 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-
 $dark: #1b1b1b;
 $light: #F1F1FF;
 $pink: #d975bb;
-$primary-font: 'Share Tech Mono';
+$primary-font: var(--app-font-family, 'Share Tech Mono', monospace);
+
+:root {
+  --app-font-family: 'Share Tech Mono', monospace;
+}
+
+html.readable-font {
+  --app-font-family: 'Roboto', Arial, sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+// Link de salto para navegação por teclado (WCAG 2.4.1)
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: 9999;
+  padding: 12px 20px;
+  background-color: #000000;
+  color: #ffff00;
+  font-weight: 700;
+  text-decoration: underline;
+  border: 2px solid #ffff00;
+  border-radius: 4px;
+  transition: top 0.2s ease;
+
+  &:focus,
+  &:focus-visible {
+    top: 12px;
+    outline: 3px solid #ffffff;
+    outline-offset: 2px;
+  }
+}
+
+// Indicador de foco visível para navegação via teclado (WCAG 2.4.7)
+*:focus-visible {
+  outline: 3px solid rgb(var(--v-theme-secondary)) !important;
+  outline-offset: 3px !important;
+}
+
+// Estilização reforçada para Modo de Alto Contraste (WCAG AAA)
+html.high-contrast-mode {
+  .v-app-bar {
+    border-bottom: 2px solid #ffff00 !important;
+  }
+
+  .v-card,
+  .v-chip,
+  .v-btn {
+    border-width: 2px !important;
+  }
+
+  .portfolio-card .icon-space {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+  }
+
+  a,
+  .v-btn {
+    font-weight: 700 !important;
+  }
+}
