@@ -1,9 +1,10 @@
 <template>
   <v-container class="presentation">
     <v-row align="center">
-      <v-col cols="12" sm="5" class="pl-sm-10" align="left">
-        <SectionTitle tag="h1" class="presentation-title">
-          Olá, me chamo<br /> <strong class="presentation-name">Mateus Rosa</strong>
+      <v-col cols="12" md="6" class="pl-md-10" align="left">
+        <SectionTitle tag="h1" class="presentation-title mb-2">
+          <span class="presentation-greeting">Olá, me chamo</span>
+          <strong class="presentation-name">Mateus Rosa</strong>
         </SectionTitle>
         <div>
           <p class="presentation-job mb-1">Desenvolvedor Full Stack</p>
@@ -32,7 +33,7 @@
           :links="socialLinks"
         />
       </v-col>
-      <v-col cols="12" sm="7" align="center">
+      <v-col cols="12" md="6" align="center">
         <v-img
           :src="mateusImg"
           alt="Foto de Mateus Rosa de perfil utilizando um computador"
@@ -107,9 +108,17 @@ const socialLinks = [
   }
 
   .presentation-title {
-    font-size: 3rem;
+    font-size: clamp(2.1rem, 3.4vw, 3.6rem) !important;
+    line-height: 1.15;
+
+    .presentation-greeting {
+      display: block;
+      white-space: nowrap;
+    }
 
     .presentation-name {
+      display: block;
+      white-space: nowrap;
       color: rgb(var(--v-theme-secondary));
     }
   }
@@ -129,10 +138,6 @@ const socialLinks = [
 }
 
 @media (min-width: 1380px) {
-  .presentation-title {
-    font-size: 4rem !important;
-  }
-
   .presentation-img {
     max-height: 550px !important;
   }

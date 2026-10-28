@@ -110,16 +110,16 @@ const sections = [
     component: PresentationSection,
   },
   {
-    id: 'trajetoria',
-    title: 'Minha Trajetória',
-    icon: 'mdi-timeline-text-outline',
-    component: AboutSection,
-  },
-  {
     id: 'habilidades',
     title: 'Habilidades',
     icon: 'mdi-code-tags',
     component: SkillSection,
+  },
+  {
+    id: 'trajetoria',
+    title: 'Minha Trajetória',
+    icon: 'mdi-timeline-text-outline',
+    component: AboutSection,
   },
   {
     id: 'portfolio',
