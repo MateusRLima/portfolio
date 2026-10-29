@@ -22,3 +22,11 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PORTFOLIO_41CF6 }}'
           channelId: live
           projectId: portfolio-41cf6
+      - name: Disable legacy site portfolio-41cf6
+        env:
+          FIREBASE_SERVICE_ACCOUNT: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PORTFOLIO_41CF6 }}'
+        run: |
+          echo "$FIREBASE_SERVICE_ACCOUNT" > /tmp/firebase-sa.json
+          export GOOGLE_APPLICATION_CREDENTIALS=/tmp/firebase-sa.json
+          npx --yes firebase-tools hosting:disable --site portfolio-41cf6 --project portfolio-41cf6 --force
+          rm -f /tmp/firebase-sa.json

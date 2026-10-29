@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <a href="#main-content" class="skip-link">
+    <a href="#main-content" class="skip-link" @click.prevent="focusMainContent">
       Pular para o conteúdo principal
     </a>
 
@@ -129,7 +129,7 @@ const sections = [
   },
 ];
 
-// Allowlist estrita de IDs permitidos para prevenir injeção de seletores via hash da URL
+// Allowlist estrita de IDs permitidos
 const allowedSectionIds = new Set(sections.map((section) => section.id));
 
 const appBarColor = computed(() => {
@@ -138,16 +138,17 @@ const appBarColor = computed(() => {
   return current === 'dark' ? '#1B1B1B' : '#F1F1FF';
 });
 
+const focusMainContent = () => {
+  const mainEl = document.getElementById('main-content');
+  mainEl?.focus();
+};
+
 const scrollToSection = async (sectionId) => {
   if (!allowedSectionIds.has(sectionId)) return;
 
   activeSection.value = sectionId;
   drawer.value = false;
   isScrollingProgrammatically.value = true;
-
-  if (window.history?.replaceState) {
-    window.history.replaceState(null, '', `#${sectionId}`);
-  }
 
   const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
@@ -169,9 +170,14 @@ const onSectionIntersect = (sectionId, isIntersecting) => {
 };
 
 onMounted(() => {
-  const initialHash = window.location.hash.replace(/^#/, '');
-  if (allowedSectionIds.has(initialHash)) {
-    scrollToSection(initialHash);
+  if (window.location.hash) {
+    const initialHash = window.location.hash.replace(/^#/, '');
+    if (window.history?.replaceState) {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+    if (allowedSectionIds.has(initialHash)) {
+      scrollToSection(initialHash);
+    }
   }
 });
 </script>
